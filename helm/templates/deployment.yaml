@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: sivasaikumar943/backend:{{ .Values.deployment.version }}
+        image: "{{ .Values.deployment.image_URL }}:{{ .Values.deployment.version }}"
         envFrom:
         - configMapRef:
             name: backend
