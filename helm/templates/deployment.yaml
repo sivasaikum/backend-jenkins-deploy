@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: backend
+  namespace: expense
+  labels:
+    app: backend
+    tier: backend
+    project: expense
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: backend
+      tier: backend
+      project: expense
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+        project: expense
+    spec:
+      containers:
+      - name: nginx
+        image: sivasaikumar943/backend:{{ .Values.deployment.version }}
+        envFrom:
+        - configMapRef:
+            name: backend

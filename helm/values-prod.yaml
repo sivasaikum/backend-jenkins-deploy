@@ -1,0 +1,5 @@
+configmap:
+  db_host: expense-dev.c65i22gs07hd.us-east-1.rds.amazonaws.com
+deployment:
+  version: 2.0.0
+  replicas: 1
