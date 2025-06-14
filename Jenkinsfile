@@ -37,7 +37,7 @@ pipeline {
                             aws eks update-kubeconfig --region us-east-1 --name expense-dev
                             kubectl get nodes
                             cd helm/
-                            sed -i 's /IMAGE_VERSION/${appVersion}/g' values-${environment}.yaml
+                            sed -i 's/IMAGE_VERSION/${appVersion}/g' values-${environment}.yaml
                             cat values-${environment}.yaml
                         """
                     }
