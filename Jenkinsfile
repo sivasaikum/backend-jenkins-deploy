@@ -23,8 +23,10 @@ pipeline {
                 script {
                     appVersion = params.version
                     environment = params.deploy_to
-                    echo "$appVersion"
-                    echo "$environment"
+                    sh """
+                        echo "$appVersion"
+                        echo "$environment"
+                    """
                 }
             }
         }
