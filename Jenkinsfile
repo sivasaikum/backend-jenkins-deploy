@@ -6,7 +6,6 @@ pipeline {
         appVersion = ''
         ACC_ID = '381491879282'
         environment = ''
-        appVersion = ''
 
     }
     options {
